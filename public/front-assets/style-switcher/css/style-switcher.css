@@ -1,0 +1,192 @@
+#switcher {
+     left: 0px;
+     padding: 8px 0px;
+     position: fixed;
+     top: 120px;
+     z-index: 3000;
+}
+
+.styleswitcher h4 {
+	color: #333333;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: -10px;
+	margin-right: 0px;
+	margin-bottom: 12px;
+	margin-left: 38px;
+}
+
+.styleswitcher .arrow-box {
+     position: absolute;
+     right: -40px;
+     top: 20px;
+}
+
+.switch-button {
+	box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	display: block;
+	font-size: 21px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 40px;
+	background-attachment: scroll;
+	background-color: #ffffff;
+	background-image: url(../images/gear_tool.html);
+	background-repeat: no-repeat;
+	background-position: 0% 5%;
+}
+
+.styleswitcher {
+     background: #ffffff none repeat scroll 0% 0%;
+     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);	 
+     left: 0px;
+     padding: 20px 10px 12px;
+     position: fixed;
+     top: 70px;
+     width: 202px;	 
+     z-index: 3000;
+}
+
+.styleswitcher p {
+     margin-bottom: 5px;
+	 color:#666
+}
+
+.styleswitcher small {
+     font-size: 9px;
+     margin-left: 6px;
+}
+
+.styleswitcher ul {
+	padding: 0px;
+	height:auto;
+	width:100%;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+
+ul.background-selector img:hover, ul.background-selector1 img:hover {
+     cursor: pointer;
+}
+
+.styleswitcher ul li {
+     display: inline-block;
+     list-style: outside none none;
+     margin: 0px 4px 10px 8px;
+}
+
+
+.styleswitcher ul li.nomargin {
+     margin-bottom: 2px;
+}
+
+ul.background-selector img {
+     border: 1px solid #999999;
+     height: 100px;
+     width: 67px;
+}
+
+ul.background-selector1 li {
+     margin-bottom: 2px;
+}
+
+ul.background-selector1 img {
+     border: 1px solid #999999;
+     height: 100px;
+	 width: 67px;
+	 
+     
+}
+
+ul.color-scheme li a:hover {
+     opacity: 1;
+}
+
+ul.color-scheme li a {
+     height: 28px;
+     opacity: 0.7;
+     width: 28px;
+}
+
+ul.color-scheme li a:hover {
+     opacity: 1;
+}
+
+ul.color-scheme li a.color1 {
+     background: #42b8d4 none repeat scroll 0% 0%;
+}
+
+ul.color-scheme li a.color2 {
+     background: #c1c923 none repeat scroll 0% 0%;
+}
+
+ul.color-scheme li a.color3 {
+     background: #f23827 none repeat scroll 0% 0%;
+}
+
+ul.color-scheme li a.color4 {
+     background: #37bc9b none repeat scroll 0% 0%;
+}
+
+ul.color-scheme li a.color5 {
+     background: #8cc152 none repeat scroll 0% 0%;
+}
+
+ul.color-scheme li a.color6 {
+     background: #0cc9e8 none repeat scroll 0% 0%;
+}
+
+ul.color-scheme li a.color7 {
+     background: #f6bb42 none repeat scroll 0% 0%;
+}
+
+ul.color-scheme li a.color8 {
+     background: #ff7315 none repeat scroll 0% 0%;
+}
+
+ul.color-scheme li a.color9 {
+     background: #4a89dc none repeat scroll 0% 0%;
+}
+
+ul.color-scheme li a.color10 {
+     background: #7c7984 none repeat scroll 0% 0%;
+}
+
+ul.color-scheme li a.color11 {
+     background: #98b0e8 none repeat scroll 0% 0%;
+}
+
+ul.color-scheme li a.color12 {
+     background: #7eccd1 none repeat scroll 0% 0%;
+}
+
+.styleswitcher ul.layouts {
+     margin-bottom: 10px;
+}
+
+ul.layouts li {
+     margin-right: 10px;
+}
+
+ul.layouts li a {
+     border: 1px solid #999999;
+     color: #666666;
+     height: auto;
+     padding: 1px 15px;
+     width: auto;
+}
+
+ul.layouts li a:hover {
+     text-decoration: none;
+}
+
+ul.layouts li.active a {
+     border-width: 2px;
+     padding: 0px 14px;
+}
+

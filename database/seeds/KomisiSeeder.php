@@ -12,10 +12,11 @@ class KomisiSeeder extends Seeder
     public function run()
     {
     	$komisi = 0;
-        for ($i=0; $i <8 ; $i++) { 
+        for ($i=0; $i <9 ; $i++) { 
     		App\Komisi::create([
-			    'komisi' => $komisi+=5,
+			    'komisi' => $komisi,
 			]);
+            $komisi+=5;
     	}
     }
 }

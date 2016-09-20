@@ -16,14 +16,27 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'web'], function () {
+	/*AUTHENTICATION*/
 	Auth::routes();
 	Route::get('/home', 'HomeController@index');
 
+	/* ORDERKU */
+	Route::resource('orderku', 'OrderkuController');
+
+	/* KOMISIKU */
+	Route::resource('komisiku', 'KomisikuController');
+
+	/* ADMINISTRATOR AREA */
 	Route::group(['prefix' => 'kelola'], function(){
+		/* KELOLA ORDER*/
 		Route::resource('order','OrderController');
+
+		/* KOMISI */
 		Route::get('komisi/atur',['as'=>'komisi.atur.daftar','uses'=>'KomisiController@komisi']);
-		Route::post('komisi/atur',['as'=>'komisi.atur','uses'=>'KomisiController@aturKomisi']);
 		Route::resource('komisi','KomisiController');
+
+		/* PEMBAGIAN KOMISI */
+		Route::resource('pembagian-komisi','PembagianKomisiController');
 	});
 });
 

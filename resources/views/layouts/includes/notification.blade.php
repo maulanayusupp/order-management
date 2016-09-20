@@ -1,9 +1,9 @@
 <li role="presentation" class="dropdown">
   <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
     <i class="fa fa-envelope-o"></i> Order
-    @if( (App\Order::count()) > 0)
+    @if( (App\Order::where('status','unpaid')->count() > 0) )
       <span class="badge bg-green">
-        {{ App\Order::count() }}
+        {{ App\Order::where('status','unpaid')->count() }}
       </span>
     @endif
   </a>
@@ -43,21 +43,25 @@
     @endif
   </a>
   <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-    <li>
-      <a>
-        <span class="image"><img src="{{ asset('images/img.png') }}" alt="Profile Image" /></span>
-        <span>
-          <span>John Smith</span>
-          <span class="time">3 mins ago</span>
-        </span>
-        <span class="message">
-          Film festivals used to be do-or-die moments for movie makers. They were where...
-        </span>
-      </a>
-    </li>
+    <?php $pembagianKomisi = App\PembagianKomisi::orderBy('created_at', 'desc')->take(5)->get(); ?>
+    @foreach($pembagianKomisi as $bagiKomisi)
+      <li>
+        <a href = "{{ route('pembagian-komisi.edit', encrypt($bagiKomisi->id))}}">
+          <span class="image"><img src="{{ asset('images/img.png') }}" alt="Profile Image" /></span>
+          <span>
+            <span>Instalasi: Rp. {{ number_format($bagiKomisi->biaya_instalasi) }}</span>
+            <br>
+            <span>Bulanan: Rp. {{ number_format($bagiKomisi->biaya_bulanan) }}</span>
+          </span>
+          <span class="message">
+            <span class="pull-left">{{ date("d F Y, H:i", strtotime($bagiKomisi->created_at)) }}</span>
+          </span>
+        </a>
+      </li>
+    @endforeach
     <li>
       <div class="text-center">
-        <a href="{{ url('kelola/komisi') }}">
+        <a href="{{ url('kelola/pembagian-komisi') }}">
           <strong>lihat semua komisi</strong>
           <i class="fa fa-angle-right"></i>
         </a>

@@ -4,20 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Komisi;
-use App\PembagianKomisi;
 use App\Http\Requests;
 
 class KomisiController extends Controller
 {
     public function komisi()
     {
-        $komisis = Komisi::all();
-        return view('pages.kelola-komisi.komisi',compact('komisis'));
-    }
-
-    public function aturKomisi()
-    {
-        
+        $komisis = Komisi::orderBy('komisi','asc')->get();
+        return view('pages.kelola-komisi.komisi', compact('komisis'));
     }
 
     /**
@@ -27,8 +21,7 @@ class KomisiController extends Controller
      */
     public function index()
     {
-        $pembagianKomisi = PembagianKomisi::orderBy('status','desc')->get();
-        return view('pages.kelola-komisi.pembagian-komisi',compact('pembagianKomisi'));
+        
     }
 
     /**
@@ -54,7 +47,7 @@ class KomisiController extends Controller
 
         ]);
         Komisi::create($request->all());
-        \Flash::success('Komisi sebesar: ' . $request->get('komisi') .  ' Ditambahkan.');
+        \Flash::success('Komisi sebesar: ' . $request->get('komisi') .  '% Ditambahkan.');
         return redirect('kelola/komisi/atur');
     }
 
@@ -77,7 +70,7 @@ class KomisiController extends Controller
      */
     public function edit($id)
     {
-         $komisi = Komisi::findOrFail(decrypt($id));
+        $komisi = Komisi::findOrFail(decrypt($id));
         return view('pages.kelola-komisi.ubah-komisi', compact('komisi'));
     }
 
@@ -94,8 +87,8 @@ class KomisiController extends Controller
         $this->validate($request, [
             'komisi' => 'required',
         ]);
-        $order->update($request->all());
-        \Flash::success('Komisi ID: '. $order->id . ' Diubah.');
+        $komisi->update($request->all());
+        \Flash::success('Komisi ID: '. $komisi->id . ' Diubah.');
         return redirect('kelola/komisi/atur');
     }
 

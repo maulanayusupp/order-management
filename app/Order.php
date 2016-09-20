@@ -12,8 +12,8 @@ class Order extends Model
         'first_name',
         'last_name',
         'email',
-        'alamat',        
-        'jenis_kelamin',
+        'alamat',
+        'jabatan',
         'kota',
         'provinsi',
         'kode_pos',
@@ -29,12 +29,16 @@ class Order extends Model
         'komisi_bulanan_ac',
         'status',
     ];
-
+    /* FEEDBACK RELATION ONE TO MANY RELATION TABLE USER */
     public function AccountManager() {
-        return $this->hasMany('User', 'account_manager_id');
+        return $this->belongsTo('App\User', 'account_manager_id');
     }
-    
+    /* FEEDBACK RELATION ONE TO MANY RELATION TABLE USER */
     public function AccountCoordinator() {
-        return $this->hasMany('User', 'account_coordinator_id');
+        return $this->belongsTo('App\User', 'account_coordinator_id');
+    }
+    /* RELATION ONE TO ONE TO TABLE PEMBAGIAN KOMISI */
+    public function order(){
+        return $this->hasOne('App\PembagianKomisi','order_id');
     }
 }

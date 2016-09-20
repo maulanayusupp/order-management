@@ -27,12 +27,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    /* ONE TO MANY RELATION TABLE ORDER*/
     public function orderAccountManager() {
-        return $this->hasMany('Order', 'account_manager_id');
+        return $this->hasMany('App\Order', 'account_manager_id');
     }
-    
+    /* ONE TO MANY RELATION TABLE ORDER*/
     public function orderAccountCoordinator() {
-        return $this->hasMany('Order', 'account_coordinator_id');
+        return $this->hasMany('App\Order', 'account_coordinator_id');
+    }
+    /* ONE TO MANY RELATION TABLE PEMBAGIAN KOMISI*/
+    public function komisiAccountManager() {
+        return $this->hasMany('App\PembagianKomisi', 'account_manager_id');
+    }
+    /* ONE TO MANY RELATION TABLE PEMBAGIAN KOMISI*/
+    public function komisiAccountCoordinator() {
+        return $this->hasMany('App\PembagianKomisi', 'account_coordinator_id');
     }
 }

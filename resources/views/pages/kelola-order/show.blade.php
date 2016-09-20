@@ -22,6 +22,14 @@
                 </div>
                 <div class="row">
                     <div class="form-group">
+                        <label class="control-label col-md-3">Nama Instansi/Perusahaan</label>
+                        <div class="col-md-5">
+                            {{ $order->instansi }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
                         <label class="control-label col-md-3">Nama Depan</label>
                         <div class="col-md-5">
                             {{ $order->first_name }}
@@ -38,6 +46,14 @@
                 </div>
                 <div class="row">
                     <div class="form-group">
+                        <label class="control-label col-md-3">Jabatan</label>
+                        <div class="col-md-5">
+                            {{ $order->jabatan }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
                         <label class="control-label col-md-3">E-Mail</label>
                         <div class="col-md-5">
                             {{ $order->email }}
@@ -49,14 +65,6 @@
                         <label class="control-label col-md-3">Alamat lengkap</label>
                         <div class="col-md-6">
                             {{ $order->alamat }}
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Jenis Kelamin</label>
-                        <div class="col-md-2">
-                            {{ $order->jenis_kelamin }}
                         </div>
                     </div>
                 </div>
@@ -89,14 +97,6 @@
                         <label class="control-label col-md-3">Nomor Telepon</label>
                         <div class="col-md-3">
                             {{ $order->nomor_telepon }}
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group">
-                        <label class="control-label col-md-3">Nama Instansi/Perusahaan</label>
-                        <div class="col-md-5">
-                            {{ $order->instansi }}
                         </div>
                     </div>
                 </div>

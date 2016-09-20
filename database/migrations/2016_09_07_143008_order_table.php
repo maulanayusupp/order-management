@@ -19,7 +19,7 @@ class OrderTable extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->string('alamat');
-            $table->string('jenis_kelamin');
+            $table->string('jabatan');
             $table->string('kota');
             $table->string('provinsi');
             $table->string('kode_pos');

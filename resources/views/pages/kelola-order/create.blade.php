@@ -14,6 +14,7 @@
 			<div class="x_content">
 				<!-- start form for validation -->
 				{!! Form::open(['url' => 'kelola/order','class' =>'form-horizontal form-label-left']) !!}
+				{{ csrf_field() }}
 					@include('pages.kelola-order._form')
 				{!! Form::close() !!}
 			</div>
